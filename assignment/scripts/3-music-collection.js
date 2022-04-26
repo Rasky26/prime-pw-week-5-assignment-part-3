@@ -79,3 +79,7 @@ showCollection(collection)
 // Test that a search of 'Red Hot Chili Peppers' successfully
 // returns an array of length two with both their albums
 console.log(`Search for 'Red Hot Chili Peppers' returned:`, findByArtist('Red Hot Chili Peppers'))
+
+// Test that a blank array is returned when an artist that
+// is not in the `collections` array is searched
+console.log(`Search for 'White Stripes' should return blank array:`, findByArtist('White Stripes'))
