@@ -3,6 +3,8 @@ console.log('***** Music Collection *****')
 // Create an empty array for the `collection` variable
 let collection = []
 
+let thing = 'apple'
+
 // Function that takes in an album title, the artist name, and the year
 // published, creates an object containing that specific information,
 // and adds it to the `collection` array.
@@ -22,7 +24,7 @@ function addToCollection(title, artist, yearPublished) {
     return record
 }
 
-// Function
+// Function that takes in an array of albums and logs out each object
 function showCollection(albums) {
 
     // Logs out the length of the current array
@@ -34,7 +36,27 @@ function showCollection(albums) {
         // Log out the albums within that array
         console.log(`${album.title} by ${album.artist}, published in`, album.yearPublished)
     }
-    return
+}
+
+// Function that searches for an artist within the `collections` array
+function findByArtist(artist) {
+    
+    // Initialize a blank array
+    let filteredCollection = []
+
+    // Loop through the collection array
+    for (let ablum of collection) {
+
+        // Check if the current album artist matches the search term
+        if (ablum.artist === artist) {
+
+            // If a match for the artist is found, add it to the output array
+            filteredCollection.push(ablum)
+        }
+    }
+
+    // Return the result
+    return filteredCollection
 }
 
 // Check that the collection array is empty
@@ -53,3 +75,7 @@ console.log('Should contain 6-total albums:', collection)
 
 // Call the `showCollection` function to log out the albums
 showCollection(collection)
+
+// Test that a search of 'Red Hot Chili Peppers' successfully
+// returns an array of length two with both their albums
+console.log(`Search for 'Red Hot Chili Peppers' returned:`, findByArtist('Red Hot Chili Peppers'))

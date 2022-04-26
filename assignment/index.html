@@ -3,11 +3,54 @@
   <head>
     <meta charset="utf-8">
     <title>Week 5 Assignment</title>
+    <!-- Import the stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- Import the JS script -->
     <script src="scripts/3-music-collection.js" charset="utf-8"></script>
   </head>
   <body>
     <h1>Week 5 Assignment - Part 3</h1>
     <p>See console for output.</p>
     <!-- Create an unordered list with any questions you have -->
+    <ul>
+      <li>I am unsure when I need to pass in an array to a function and when that is not needed</li>
+      <li>It seems as though:</li>
+      <ol>
+        <li>If the array was declared BEFORE the function, you do NOT need to pass that array into the function</li>
+        <li>If the array was declared AFTER the function, you DO need to pass that array as a parameter into the function.</li>
+      </ol>
+      <li>If this is the case, what is the best-practice?</li>
+      <ol>
+        <li>Define variables at the top of the program and skip passing in the array?</li>
+        <code>
+          <br>
+          <span class="js-param">let</span> <span class="var">var1</span> = <span class="string">'apple'</span><br>
+          <span class="js-param">let</span> <span class="var">arrayOne</span> = []<br>
+          <br>
+          <span class="js-param">function</span> <span class="function">newFunction</span>(<span class="var">var</span>) {
+            &emsp;<p class="comment">// Less input parameters, but seems like it requires array to already exist, otherwise an error will occur</p>
+            &emsp;<span class="built-in">for</span> (<span class="js-param">let</span> <span class="var">a</span> <span class="js-param">of</span> <span class="var">arrayOne</span>) {<br>
+              &emsp;&emsp;<span class="var">console</span>.<span class="function">log</span>(<span class="var">a</span>)<br>
+              &emsp;}<br>
+          }<br><br>
+        </code>
+        <li>Place functions at the top and pass in arrays?</li>
+        <code>
+          <br>
+          <span class="js-param">function</span> <span class="function">newFunction</span>(<span class="var">var</span>, <span class="var">array</span>) {
+            &emsp;<p class="comment">// Less input parameters, but seems like it requires array to already exist, otherwise an error will occur</p>
+            &emsp;<span class="built-in">for</span> (<span class="js-param">let</span> <span class="var">a</span> <span class="js-param">of</span> <span class="var">array</span>) {<br>
+              &emsp;&emsp;<span class="var">console</span>.<span class="function">log</span>(<span class="var">a</span>)<br>
+              &emsp;}<br>
+          }<br><br>
+          <span class="js-param">let</span> <span class="var">var1</span> = <span class="string">'apple'</span><br>
+          <span class="js-param">let</span> <span class="var">arrayOne</span> = []<br>
+          <br>
+        </code>
+        <ul>
+          <li>Option #2 seems like it would work best for forward compliance in case the code undergoes significant changes.</li>
+        </ul>
+      </ol>
+    </ul>
   </body>
 </html>

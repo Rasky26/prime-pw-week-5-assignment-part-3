@@ -1,0 +1,23 @@
+.js-param {
+    color: hsl(240, 100%, 46%);
+}
+
+.var {
+    color: hsl(220, 67%, 60%);
+}
+
+.string {
+    color: hsl(39, 100%, 45%);
+}
+
+.function {
+    color: hsl(54, 85%, 41%);
+}
+
+.comment {
+    color: green;
+}
+
+.built-in {
+    color: hsl(317, 93%, 71%);
+}
