@@ -3,6 +3,9 @@ console.log('***** Music Collection *****')
 // Create an empty array for the `collection` variable
 let collection = []
 
+// Function that takes in an album title, the artist name, and the year
+// published, creates an object containing that specific information,
+// and adds it to the `collection` array.
 function addToCollection(title, artist, yearPublished) {
     
     // Using the imput, create a `record` object
@@ -19,6 +22,21 @@ function addToCollection(title, artist, yearPublished) {
     return record
 }
 
+// Function
+function showCollection(albums) {
+
+    // Logs out the length of the current array
+    console.log('The current array contains', albums.length, 'items.')
+
+    // Loop through the array
+    for (let album of albums) {
+
+        // Log out the albums within that array
+        console.log(`${album.title} by ${album.artist}, published in`, album.yearPublished)
+    }
+    return
+}
+
 // Check that the collection array is empty
 console.log('Starting with an empty `collection` array:', collection)
 
@@ -32,3 +50,6 @@ console.log('Album added:', addToCollection('Plans', 'Death Cab for Cutie', 2005
 
 // Verify that all six albums were successfully added to the array
 console.log('Should contain 6-total albums:', collection)
+
+// Call the `showCollection` function to log out the albums
+showCollection(collection)
