@@ -108,15 +108,9 @@ function search(searchTerms=null) {
     // Check the input for testing purposes
     console.log('The entered search terms are:', searchTerms)
 
-    // Verify that the collection array can be accessed here
-    console.log('Here is the collection:', collection)
-
     // If search terms are provided, loop over the whole collection to
     // look for matches
     for (let album of collection) {
-
-        // For testing, log out the current album's artist and yearPublished
-        console.log('The current artist is:', album.artist, 'with year:', album.yearPublished)
 
         // Use an AND statement to check if BOTH search terms exist
         // in the current album object
