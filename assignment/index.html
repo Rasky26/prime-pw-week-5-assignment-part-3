@@ -25,27 +25,25 @@
         <code>
           <br>
           <span class="js-param">let</span> <span class="var">var1</span> = <span class="string">'apple'</span><br>
-          <span class="js-param">let</span> <span class="var">arrayOne</span> = []<br>
+          <span class="js-param">let</span> <span class="var">arrayOne</span> = [<span class="string">'apple'</span>]<br>
           <br>
           <span class="js-param">function</span> <span class="function">newFunction</span>(<span class="var">var</span>) {
             &emsp;<p class="comment">// Less input parameters, but seems like it requires array to already exist, otherwise an error will occur</p>
-            &emsp;<span class="built-in">for</span> (<span class="js-param">let</span> <span class="var">a</span> <span class="js-param">of</span> <span class="var">arrayOne</span>) {<br>
-              &emsp;&emsp;<span class="var">console</span>.<span class="function">log</span>(<span class="var">a</span>)<br>
-              &emsp;}<br>
-          }<br><br>
+              &emsp;<span class="var">console</span>.<span class="function">log</span>(<span class="var">arrayOne</span>.<span class="function">includes</span>(<span class="var">var</span>))<br>
+          }<br>
+          <span class="function">newFunction</span>(<span class="var">var1</span>)<br><br>
         </code>
         <li>Place functions at the top and pass in arrays?</li>
         <code>
           <br>
           <span class="js-param">function</span> <span class="function">newFunction</span>(<span class="var">var</span>, <span class="var">array</span>) {
-            &emsp;<p class="comment">// Less input parameters, but seems like it requires array to already exist, otherwise an error will occur</p>
-            &emsp;<span class="built-in">for</span> (<span class="js-param">let</span> <span class="var">a</span> <span class="js-param">of</span> <span class="var">array</span>) {<br>
-              &emsp;&emsp;<span class="var">console</span>.<span class="function">log</span>(<span class="var">a</span>)<br>
-              &emsp;}<br>
+            &emsp;<p class="comment">// Requires more inputs (now it needs the array too), but seems like it won't break the function is someone moves the defined array lower in the code, or wants to use a different array defined AFTER the function.</p>
+              &emsp;<span class="var">console</span>.<span class="function">log</span>(<span class="var">arrayOne</span>.<span class="function">includes</span>(<span class="var">var</span>))<br>
           }<br><br>
           <span class="js-param">let</span> <span class="var">var1</span> = <span class="string">'apple'</span><br>
-          <span class="js-param">let</span> <span class="var">arrayOne</span> = []<br>
+          <span class="js-param">let</span> <span class="var">arrayOne</span> = [<span class="string">'apple'</span>]<br>
           <br>
+          <span class="function">newFunction</span>(<span class="var">var1</span>, <span class="var">arrayOne</span>)<br><br>
         </code>
         <ul>
           <li>Option #2 seems like it would work best for forward compliance in case the code undergoes significant changes.</li>
